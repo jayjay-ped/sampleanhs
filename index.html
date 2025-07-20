@@ -13,126 +13,82 @@
       background-color: #fff4e6;
       color: #212529;
     }
-
     .navbar {
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
       justify-content: space-between;
-      padding: 10px 20px;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 15px 40px;
       background: #f8c291;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-
-    .nav-container {
-      display: flex;
-      flex: 1;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 10px;
-    }
-
     .nav-links {
       display: flex;
-      gap: 8px;
-      flex-wrap: nowrap;
-      overflow-x: auto;
+      flex-wrap: wrap;
+      gap: 12px;
     }
-
     .nav-links button {
-      white-space: nowrap;
-      padding: 8px 16px;
+      padding: 10px 20px;
       border: none;
-      border-radius: 20px;
+      border-radius: 25px;
       background: linear-gradient(to right, #fceabb, #f88d51);
       cursor: pointer;
-      font-size: 14px;
+      font-size: 16px;
       transition: transform 0.2s, background 0.3s;
     }
-
     .nav-links button:hover {
       transform: scale(1.05);
       background: linear-gradient(to right, #ffeaa7, #e17055);
     }
-
     .search-box {
       display: flex;
       align-items: center;
       background: #dbeafe;
       padding: 6px 10px;
-      border-radius: 10px;
+      border-radius: 12px;
       margin-top: 10px;
-      width: 100%;
-      max-width: 300px;
     }
-
     .search-box input {
       border: none;
       outline: none;
       background: transparent;
       padding: 5px;
-      font-size: 14px;
-      width: 100%;
+      font-size: 16px;
     }
-
     .search-box button {
       background: none;
       border: none;
-      font-size: 16px;
+      font-size: 18px;
       cursor: pointer;
     }
-
-    @media (min-width: 769px) {
-      .navbar {
-        flex-wrap: nowrap;
-      }
-
-      .nav-container {
-        flex: none;
-      }
-
-      .search-box {
-        margin-top: 0;
-        margin-left: auto;
-        width: auto;
-      }
-    }
-
     .container {
       padding: 30px 40px;
     }
-
     .page {
       display: none;
     }
-
     .page.active {
       display: block;
       animation: fadeIn 0.5s ease-in;
     }
-
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
     .title {
       text-align: center;
       margin-bottom: 20px;
     }
-
     .title h1 {
       font-size: 42px;
       color: #f76707;
     }
-
     .title h2 {
       font-size: 22px;
       color: #555;
       margin-top: 8px;
       font-weight: 400;
     }
-
     .section {
       display: flex;
       align-items: center;
@@ -144,40 +100,33 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       transition: transform 0.3s;
     }
-
     .section:hover {
       transform: translateY(-4px);
     }
-
     .section img {
       width: 120px;
       height: 120px;
       border-radius: 20px;
       object-fit: contain;
     }
-
     .text {
       flex: 1;
     }
-
     .text h3 {
       font-size: 26px;
       margin-bottom: 10px;
       color: #f76707;
     }
-
     .text p {
       font-size: 16px;
       line-height: 1.6;
     }
-
     .footer {
       background-color: #a5d8ff;
       padding: 30px 40px;
       text-align: right;
       font-size: 16px;
     }
-
     .footer a {
       display: inline-block;
       margin-left: 20px;
@@ -185,15 +134,38 @@
       text-decoration: none;
       transition: color 0.2s;
     }
-
     .footer a:hover {
       color: #1e40af;
     }
-
     @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .search-box {
+        width: 100%;
+        margin-bottom: 10px;
+        order: -1;
+      }
+      .nav-links {
+        width: 100%;
+        justify-content: center;
+      }
       .section {
         flex-direction: column;
         text-align: center;
+      }
+      .title h1 {
+        font-size: 32px;
+      }
+      .title h2 {
+        font-size: 18px;
+      }
+      .text h3 {
+        font-size: 22px;
+      }
+      .text p {
+        font-size: 15px;
       }
     }
   </style>
@@ -201,13 +173,6 @@
 <body>
 
   <div class="navbar">
-    <div class="nav-container">
-      <div class="nav-links">
-        <button onclick="showPage('home')">Home</button>
-        <button onclick="showPage('teachers')">Teachers</button>
-        <button onclick="showPage('staffs')">Staffs</button>
-      </div>
-    </div>
     <div class="search-box">
       <input list="search-options" placeholder="Search">
       <datalist id="search-options">
@@ -219,9 +184,15 @@
       </datalist>
       <button>🔍</button>
     </div>
+    <div class="nav-links">
+      <button onclick="showPage('home')">Home</button>
+      <button onclick="showPage('teachers')">Teachers</button>
+      <button onclick="showPage('staffs')">Staffs</button>
+    </div>
   </div>
 
   <div class="container">
+    <!-- HOME PAGE -->
     <div class="page active" id="home">
       <div class="title">
         <h1>Welcome to Angono National High School</h1>
@@ -253,6 +224,7 @@
       </div>
     </div>
 
+    <!-- TEACHERS PAGE -->
     <div class="page" id="teachers">
       <div class="title">
         <h1>Meet Our Teachers</h1>
@@ -266,6 +238,7 @@
       </div>
     </div>
 
+    <!-- STAFFS PAGE -->
     <div class="page" id="staffs">
       <div class="title">
         <h1>Our Amazing Staff</h1>

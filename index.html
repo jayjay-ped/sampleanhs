@@ -15,10 +15,10 @@
     }
     .navbar {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      padding: 15px 40px;
+      padding: 15px 20px;
       background: #f8c291;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
@@ -137,6 +137,8 @@
     .footer a:hover {
       color: #1e40af;
     }
+
+    /* Responsive Design */
     @media (max-width: 768px) {
       .navbar {
         flex-direction: column;
@@ -144,28 +146,11 @@
       }
       .search-box {
         width: 100%;
-        margin-bottom: 10px;
-        order: -1;
-      }
-      .nav-links {
-        width: 100%;
-        justify-content: center;
+        margin-top: 10px;
       }
       .section {
         flex-direction: column;
         text-align: center;
-      }
-      .title h1 {
-        font-size: 32px;
-      }
-      .title h2 {
-        font-size: 18px;
-      }
-      .text h3 {
-        font-size: 22px;
-      }
-      .text p {
-        font-size: 15px;
       }
     }
   </style>
@@ -173,6 +158,11 @@
 <body>
 
   <div class="navbar">
+    <div class="nav-links">
+      <button onclick="showPage('home')">Home</button>
+      <button onclick="showPage('teachers')">Teachers</button>
+      <button onclick="showPage('staffs')">Staffs</button>
+    </div>
     <div class="search-box">
       <input list="search-options" placeholder="Search">
       <datalist id="search-options">
@@ -183,11 +173,6 @@
         <option value="Contact">
       </datalist>
       <button>🔍</button>
-    </div>
-    <div class="nav-links">
-      <button onclick="showPage('home')">Home</button>
-      <button onclick="showPage('teachers')">Teachers</button>
-      <button onclick="showPage('staffs')">Staffs</button>
     </div>
   </div>
 

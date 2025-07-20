@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Angono National High School</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #fff4e6;
@@ -133,6 +135,39 @@
       color: #1e40af;
     }
     @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 20px;
+      }
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+      }
+      .nav-links button {
+        width: 100%;
+        text-align: center;
+      }
+      .search-box {
+        width: 100%;
+        justify-content: center;
+      }
+      .container {
+        padding: 20px;
+      }
+      .title h1 {
+        font-size: 32px;
+      }
+      .title h2 {
+        font-size: 18px;
+      }
+      .text h3 {
+        font-size: 22px;
+      }
+      .text p {
+        font-size: 15px;
+      }
       .section {
         flex-direction: column;
         text-align: center;
@@ -141,6 +176,7 @@
   </style>
 </head>
 <body>
+
   <div class="navbar">
     <div class="nav-links">
       <button onclick="showPage('home')">Home</button>
@@ -161,6 +197,7 @@
   </div>
 
   <div class="container">
+    <!-- HOME PAGE -->
     <div class="page active" id="home">
       <div class="title">
         <h1>Welcome to Angono National High School</h1>
@@ -189,6 +226,7 @@
       </div>
     </div>
 
+    <!-- TEACHERS PAGE -->
     <div class="page" id="teachers">
       <div class="title">
         <h1>Meet Our Teachers</h1>
@@ -202,6 +240,7 @@
       </div>
     </div>
 
+    <!-- STAFFS PAGE -->
     <div class="page" id="staffs">
       <div class="title">
         <h1>Our Amazing Staff</h1>
@@ -243,5 +282,6 @@
       }
     });
   </script>
+
 </body>
 </html>

@@ -15,17 +15,17 @@
     }
     .navbar {
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
       padding: 15px 20px;
       background: #f8c291;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     .nav-links {
       display: flex;
-      flex-wrap: wrap;
       gap: 12px;
+      flex-wrap: wrap;
     }
     .nav-links button {
       padding: 10px 20px;
@@ -62,7 +62,7 @@
       cursor: pointer;
     }
     .container {
-      padding: 30px 40px;
+      padding: 30px 20px;
     }
     .page {
       display: none;
@@ -123,7 +123,7 @@
     }
     .footer {
       background-color: #a5d8ff;
-      padding: 30px 40px;
+      padding: 30px 20px;
       text-align: right;
       font-size: 16px;
     }
@@ -137,8 +137,6 @@
     .footer a:hover {
       color: #1e40af;
     }
-
-    /* Responsive Design */
     @media (max-width: 768px) {
       .navbar {
         flex-direction: column;
@@ -192,7 +190,7 @@
         </p>
       </div>
 
-      <div class="section">
+      <div class="section" onclick="showPage('teachers')" style="cursor: pointer;">
         <img src="logo.png" alt="Teacher Icon">
         <div class="text">
           <h3>Teachers</h3>
@@ -200,7 +198,7 @@
         </div>
       </div>
 
-      <div class="section">
+      <div class="section" onclick="showPage('staffs')" style="cursor: pointer;">
         <img src="logo.png" alt="Staff Icon">
         <div class="text">
           <h3>Staff</h3>
